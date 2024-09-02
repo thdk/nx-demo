@@ -1,0 +1,26 @@
+{
+  "name": "nest-api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/nest-api/src",
+  "projectType": "application",
+  "tags": ["books"],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "nest-api:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "nest-api:build:development"
+        },
+        "production": {
+          "buildTarget": "nest-api:build:production"
+        }
+      }
+    }
+  }
+}
