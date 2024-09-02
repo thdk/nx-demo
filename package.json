@@ -5,10 +5,13 @@
   "scripts": {},
   "private": true,
   "devDependencies": {
+    "@nestjs/schematics": "^10.0.1",
     "@nx/devkit": "19.6.4",
     "@nx/eslint": "19.6.4",
     "@nx/eslint-plugin": "19.6.4",
     "@nx/js": "19.6.4",
+    "@nx/nest": "^19.6.4",
+    "@nx/node": "^19.6.4",
     "@nx/playwright": "19.6.4",
     "@nx/remix": "^19.6.4",
     "@nx/vite": "19.6.4",

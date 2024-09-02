@@ -1,7 +1,8 @@
 ## Create nx workspace
 
 ```sh
- thdk@Thomass-MacBook-Pro-4  ~/repos/itp/nx  npx create-nx-workspace@latest nx-demo
+npx create-nx-workspace@latest nx-demo
+
 Need to install the following packages:
 create-nx-workspace@19.6.4
 Ok to proceed? (y)
@@ -44,18 +45,36 @@ https://nx.dev/getting-started/tutorials/npm-workspaces-tutorial
 
 ```
 
+> Package-based monorepo, integrated monorepo, or standalone project? · integrated
+
 ```sh
 cd nx-demo
 ```
 
 ## Install plugins
 
+See a [list of official packages](https://nx.dev/nx-api#official-packages-reference)
+
 ```sh
 npx nx add @nx/remix
+npx nx add @nx/node
+npx nx add @nx/nest
 ```
 
 ## Generate applications
 
 ```sh
 npx nx g @nx/remix:application --directory apps/remix-app --name remix-app --projectNameAndRootFormat as-provided --unitTestRunner vitest --e2eTestRunner playwright
+```
+
+## Navigate the nx workspace
+
+```sh
+npx nx show project remix-app
+```
+
+> nx run [project][:target][:configuration]
+
+```sh
+npx nx run remix-app:dev
 ```
