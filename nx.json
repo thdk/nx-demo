@@ -71,6 +71,11 @@
     },
     "e2e-ci--**/*": {
       "dependsOn": ["^build"]
+    },
+    "@nx/vite:build": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     }
   }
 }
