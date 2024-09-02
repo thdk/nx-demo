@@ -12,5 +12,16 @@
       "{workspaceRoot}/.github/workflows/ci.yml"
     ]
   },
-  "nxCloudAccessToken": "YzEwOThjYTctMzZhMC00YTkxLWEwOTctODZjNDM0ODdlMzM4fHJlYWQtd3JpdGU="
+  "nxCloudAccessToken": "YzEwOThjYTctMzZhMC00YTkxLWEwOTctODZjNDM0ODdlMzM4fHJlYWQtd3JpdGU=",
+  "plugins": [
+    {
+      "plugin": "@nx/remix/plugin",
+      "options": {
+        "startTargetName": "start",
+        "buildTargetName": "build",
+        "devTargetName": "dev",
+        "typecheckTargetName": "typecheck"
+      }
+    }
+  ]
 }

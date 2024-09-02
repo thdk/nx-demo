@@ -4,10 +4,15 @@
   "license": "MIT",
   "scripts": {},
   "private": true,
-  "dependencies": {},
   "devDependencies": {
     "@nx/js": "19.6.4",
+    "@nx/remix": "^19.6.4",
+    "@nx/web": "19.6.4",
     "@nx/workspace": "19.6.4",
+    "@remix-run/dev": "^2.8.1",
     "nx": "19.6.4"
+  },
+  "dependencies": {
+    "@remix-run/serve": "^2.8.1"
   }
 }
