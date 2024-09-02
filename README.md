@@ -1,4 +1,6 @@
-```
+## Create nx workspace
+
+```sh
  thdk@Thomass-MacBook-Pro-4  ~/repos/itp/nx  npx create-nx-workspace@latest nx-demo
 Need to install the following packages:
 create-nx-workspace@19.6.4
@@ -40,6 +42,20 @@ Finish it by visiting: https://cloud.nx.app/connect/4bBQtKTPG8
 
 https://nx.dev/getting-started/tutorials/npm-workspaces-tutorial
 
- thdk@Thomass-MacBook-Pro-4  ~/repos/itp/nx  cd nx-demo
- thdk@Thomass-MacBook-Pro-4  ~/repos/itp/nx/nx-demo   main  code -r .
+```
+
+```sh
+cd nx-demo
+```
+
+## Install plugins
+
+```sh
+npx nx add @nx/remix
+```
+
+## Generate applications
+
+```sh
+npx nx g @nx/remix:application --directory apps/remix-app --name remix-app --projectNameAndRootFormat as-provided --unitTestRunner vitest --e2eTestRunner playwright
 ```
