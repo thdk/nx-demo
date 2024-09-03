@@ -17,4 +17,13 @@ module.exports = {
       generatePackageJson: true,
     }),
   ],
+  devServer: {
+    proxy: [
+      {
+        context: ['/api'],
+        target: 'http://localhost:3000',
+        pathRewrite: { '^/api': '' },
+      },
+    ],
+  },
 };

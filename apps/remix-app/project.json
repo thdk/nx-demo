@@ -9,7 +9,7 @@
     "dev": {
       "options": {
         "cwd": "apps/remix-app",
-        "command": "remix dev --manual --port 3001"
+        "command": "remix dev --manual"
       },
       "executor": "nx:run-commands",
       "configurations": {},

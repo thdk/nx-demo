@@ -40,3 +40,7 @@ Thumbs.db
 
 .nx/cache
 .nx/workspace-data
+
+# Project defaults can be stored in the .env file but we still allow developers to override them with a .env.local file.
+# See https://nx.dev/recipes/tips-n-tricks/define-environment-variables#set-environment-variables
+.env.local
