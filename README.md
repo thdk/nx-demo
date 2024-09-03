@@ -117,3 +117,10 @@ Copy the target and paste in in `apps/remix-app/project.json` under 'targets'
     }
   }
 ```
+
+## Embrace .env files
+
+Nx can handle multiple .env files where one can add project defaults in a `.env` file.
+This file can be commited to source control. `.env` files should never contain secrets (or be encrypted).
+
+For more details about how these files are process see: https://nx.dev/recipes/tips-n-tricks/define-environment-variables#set-environment-variables
