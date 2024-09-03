@@ -85,3 +85,35 @@ npx nx run remix-app:dev
 # use vite / vitest when prompted
 npx nx g @nx/js:lib api-client
 ```
+
+## Workspace tools
+
+### Move a project
+
+Move api-client from root folder to subfolder in `libs` folder.
+
+```sh
+npx nx generate @nx/workspace:move --project api-client --destination libs/books-api-client --newProjectName books-api-client --projectNameAndRootFormat as-provided
+```
+
+## Override inferred targets
+
+```sh
+npx nx show project remix-app
+```
+
+Copy the target and paste in in `apps/remix-app/project.json` under 'targets'
+
+```json
+  "targets": {
+    "dev": {
+      "options": {
+        "cwd": "apps/remix-app",
+        "command": "remix dev --manual"
+      },
+      "executor": "nx:run-commands",
+      "configurations": {},
+      "parallelism": true
+    }
+  }
+```
