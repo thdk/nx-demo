@@ -3,6 +3,7 @@ import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import * as path from 'path';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
+import createExternal from 'vite-plugin-external';
 
 export default defineConfig({
   root: __dirname,
@@ -13,6 +14,9 @@ export default defineConfig({
     dts({
       entryRoot: 'src',
       tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
+    }),
+    createExternal({
+      nodeBuiltins: true,
     }),
   ],
 
