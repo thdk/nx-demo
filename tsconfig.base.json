@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-demo/api-client": ["api-client/src/index.ts"]
+      "@nx-demo/books-api-client": ["libs/books-api-client/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

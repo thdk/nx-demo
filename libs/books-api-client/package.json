@@ -1,5 +1,5 @@
 {
-  "name": "@nx-demo/api-client",
+  "name": "@nx-demo/books-api-client",
   "version": "0.0.1",
   "type": "module",
   "dependencies": {},
