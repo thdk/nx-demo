@@ -78,3 +78,10 @@ npx nx show project remix-app
 ```sh
 npx nx run remix-app:dev
 ```
+
+## Generate libraries
+
+```sh
+# use vite / vitest when prompted
+npx nx g @nx/js:lib api-client
+```
