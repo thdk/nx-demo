@@ -1,8 +1,11 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, UseInterceptors } from '@nestjs/common';
+import { ZodResponseValidationInterceptor } from '../validation/zod-response-validation-interceptor';
+import { getBooksSchema } from '@nx-demo/books-api-contracts/schemas';
 
 @Controller('books')
 export class BooksController {
   @Get()
+  @UseInterceptors(new ZodResponseValidationInterceptor(getBooksSchema))
   async books() {
     return [
       { id: 1, title: 'The Great Gatsby' },
