@@ -1,14 +1,16 @@
 /// <reference types='vitest' />
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
-import * as path from 'path';
+import path from 'node:path';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
+import { externalizeDeps } from 'vite-plugin-externalize-deps';
 
 export default defineConfig({
   root: __dirname,
   cacheDir: '../../node_modules/.vite/libs/books-api-contracts',
 
   plugins: [
+    externalizeDeps(),
     nxViteTsPaths(),
     dts({
       entryRoot: 'src',
@@ -31,17 +33,14 @@ export default defineConfig({
       transformMixedEsModules: true,
     },
     lib: {
-      // Could also be a dictionary or array of multiple entry points.
-      entry: 'src/index.ts',
+      entry: ['src/schemas.ts', 'src/types.ts'],
+
       name: 'books-api-contracts',
-      fileName: 'index',
+      fileName: (format, entryName) =>
+        `${entryName}.${format === 'es' ? 'mjs' : format}`,
       // Change this to the formats you want to support.
       // Don't forget to update your package.json as well.
       formats: ['es', 'cjs'],
-    },
-    rollupOptions: {
-      // External packages that should not be bundled into your library.
-      external: [],
     },
   },
 

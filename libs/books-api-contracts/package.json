@@ -2,8 +2,23 @@
   "name": "@nx-demo/books-api-contracts",
   "version": "0.0.1",
   "dependencies": {},
-  "main": "./index.js",
-  "module": "./index.mjs",
+  "exports": {
+    "./types": {
+      "types": "./types.d.ts",
+      "require": "./types.cjs",
+      "import": "./types.mjs",
+      "default": "./types.mjs"
+    },
+    "./schemas": {
+      "types": "./schemas.d.ts",
+      "require": "./schemas.cjs",
+      "import": "./schemas.mjs",
+      "default": "./schemas.js"
+    }
+  },
+  "main": "./index.cjs",
+  "module": "./index.js",
   "typings": "./index.d.ts",
-  "private": true
+  "private": true,
+  "type": "module"
 }
