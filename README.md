@@ -124,3 +124,29 @@ Nx can handle multiple .env files where one can add project defaults in a `.env`
 This file can be commited to source control. `.env` files should never contain secrets (or be encrypted).
 
 For more details about how these files are process see: https://nx.dev/recipes/tips-n-tricks/define-environment-variables#set-environment-variables
+
+## @nx/dependency-checks
+
+Since all our dependencies are managed by the root package.json file,
+it would be hard to manually keep track of which project really needs which dependencies.
+Luckly this is something we do not have to worry about since nx provides us with a
+eslint rule to automatically detect the dependencies of a project and update the projects package.json
+for us.
+
+Running linting on this repo currently shows:
+
+```sh
+../nx-demo/libs/books-api-contracts/package.json
+        4:3  error  The "books-api-contracts" project uses the following packages, but they are missing from "dependencies":
+          - zod  @nx/dependency-checks
+
+      ✖ 1 problem (1 error, 0 warnings)
+        1 error and 0 warnings potentially fixable with the `--fix` option.
+
+```
+
+All we need to do is:
+
+```sh
+npx nx run-many lint -- --fix
+```

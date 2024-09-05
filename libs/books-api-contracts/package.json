@@ -1,7 +1,9 @@
 {
   "name": "@nx-demo/books-api-contracts",
   "version": "0.0.1",
-  "dependencies": {},
+  "dependencies": {
+    "zod": "^3.23.8"
+  },
   "exports": {
     "./types": {
       "types": "./types.d.ts",

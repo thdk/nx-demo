@@ -2,7 +2,10 @@
   "name": "@nx-demo/books-api-client",
   "version": "0.0.1",
   "type": "module",
-  "dependencies": {},
+  "dependencies": {
+    "@nx-demo/books-api-contracts": "0.0.1",
+    "got": "^14.4.2"
+  },
   "main": "./index.js",
   "module": "./index.mjs",
   "typings": "./index.d.ts",
