@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/nest-api/src",
   "projectType": "application",
-  "tags": ["books"],
+  "tags": ["books", "type:app"],
   "targets": {
     "serve": {
       "executor": "@nx/js:node",

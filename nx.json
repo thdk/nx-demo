@@ -79,7 +79,7 @@
     }
   },
   "release": {
-    "projects": ["libs/*"],
+    "projects": ["tag:type:app", "tag:type:package"],
     "releaseTagPattern": "{projectName}@{version}",
     "projectsRelationship": "independent",
     "conventionalCommits": {

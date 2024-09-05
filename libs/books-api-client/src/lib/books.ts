@@ -12,8 +12,10 @@ export async function findBooks(): Promise<Book[]> {
     .json();
 
   // Map getBooksDto[] to Books[]
-  return booksResponse.map((book) => ({
-    id: book.id.toString(),
-    title: book.title,
-  }));
+  return booksResponse
+    .map((book) => ({
+      id: book.id.toString(),
+      title: book.title,
+    }))
+    .reverse();
 }

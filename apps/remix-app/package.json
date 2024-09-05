@@ -1,6 +1,7 @@
 {
   "private": true,
-  "name": "remix-app",
+  "version": "0.0.1",
+  "name": "books-api",
   "description": "",
   "license": "",
   "scripts": {},
