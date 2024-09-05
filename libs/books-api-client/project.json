@@ -14,6 +14,40 @@
         "tsConfig": "libs/books-api-client/tsconfig.lib.json",
         "assets": ["libs/books-api-client/*.md"]
       }
+    },
+    "test": {
+      "options": {
+        "cwd": "libs/books-api-client",
+        "command": "vitest --passWithNoTests"
+      },
+      "cache": true,
+      "inputs": [
+        "default",
+        "^production",
+        {
+          "externalDependencies": ["vitest"]
+        },
+        {
+          "env": "CI"
+        }
+      ],
+      "outputs": ["{workspaceRoot}/coverage/api-client"],
+      "metadata": {
+        "technologies": ["vite"],
+        "description": "Run Vite tests",
+        "help": {
+          "command": "npx vitest --help",
+          "example": {
+            "options": {
+              "bail": 1,
+              "coverage": true
+            }
+          }
+        }
+      },
+      "executor": "nx:run-commands",
+      "configurations": {},
+      "parallelism": true
     }
   }
 }
