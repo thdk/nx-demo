@@ -2,7 +2,15 @@
   "name": "@nx-demo/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "format:check": "nx format",
+    "format": "nx format:write",
+    "lint": "nx run-many --target=lint",
+    "build": "nx run-many --target=build",
+    "all": "nx run-many --target=format:check,lint,build,test",
+    "test": "nx run-many --target=test",
+    "e2e": "nx run-many --target=e2e"
+  },
   "private": true,
   "devDependencies": {
     "@nestjs/schematics": "^10.0.1",
