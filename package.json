@@ -9,7 +9,8 @@
     "build": "nx run-many --target=build",
     "all": "nx run-many --target=format:check,lint,build,test",
     "test": "nx run-many --target=test",
-    "e2e": "nx run-many --target=e2e"
+    "e2e": "nx run-many --target=e2e",
+    "verdaccio": "nx run local-registry"
   },
   "private": true,
   "devDependencies": {
@@ -57,6 +58,7 @@
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "typescript": "~5.5.2",
+    "verdaccio": "^5.0.4",
     "vite": "^5.4.3",
     "vite-plugin-dts": "~3.8.1",
     "vite-plugin-external": "^4.3.1",
@@ -79,5 +81,8 @@
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.0",
     "zod": "^3.23.8"
+  },
+  "nx": {
+    "includedScripts": []
   }
 }

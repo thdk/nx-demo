@@ -150,3 +150,55 @@ All we need to do is:
 ```sh
 npx nx run-many lint -- --fix
 ```
+
+## Publishing
+
+Use the `setup-verdaccio` generator from `@nx/js` to configure a local npm registry to test versioning / publising.
+
+```sh
+npx nx generate setup-verdaccio
+```
+
+Before you start the registry, adjust the configuration in `project.json`.
+
+```json
+    "local-registry": {
+      "executor": "@nx/js:verdaccio",
+      "options": {
+        "port": 4873,
+        "config": ".verdaccio/config.yml",
+        "storage": "tmp/local-registry/storage",
+        "//": "default location is user, but let's keep all our config close to it's origin",
+        "location": "project",
+        "//": "only use the local registry for our own packages",
+        "scopes": ["@nx-demo"]
+      }
+    }
+```
+
+Start local verdaccio registry
+
+```sh
+npx nx run local-registry
+```
+
+## Versioning
+
+```sh
+npx nx add @nx/js
+```
+
+See `release` section in [nx.json](./nx.json)
+
+Note that you can also use `nx release` in any non Nx monorepo.
+
+```sh
+npx nx release
+
+# other scripts
+## First ever release in the repo
+npx nx release --first-release
+
+## Useful for ci, won't prompt for publish confirmation
+npx nx release --yes
+```
