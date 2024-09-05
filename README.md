@@ -202,3 +202,5 @@ npx nx release --first-release
 ## Useful for ci, won't prompt for publish confirmation
 npx nx release --yes
 ```
+
+See `release` section in [nx.json](./nx.json)
