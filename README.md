@@ -188,9 +188,17 @@ npx nx run local-registry
 npx nx add @nx/js
 ```
 
-See `release` section in [nx.json](./nx.json)
+See `release` section in [nx.json](./nx.json) for configuration settings.
 
 Note that you can also use `nx release` in any non Nx monorepo.
+
+`nx release` actually wraps tree sub commands
+
+- nx release version
+- nx release changelog
+- nx release publish
+
+Each of these commands can be run seperately (and also programatically if you feel the need to customize it more or implement it in other tooling).
 
 ```sh
 npx nx release
@@ -203,4 +211,29 @@ npx nx release --first-release
 npx nx release --yes
 ```
 
-See `release` section in [nx.json](./nx.json)
+### Use nx to version both packages and applications
+
+This is where things become more interesting. NX is mainly focussed on CI. But we could also leverage the versioning feature to
+version applications as well and use this version for tagging build artifacts and deploying specific versions.
+
+To do this we need to differentiate packages from applications.
+One way to differentiate would be to treat all projects in the `apps` folder as an application. However,
+this folder might also contain other projects that do not need to be versioned such as `my-app-e2e`.
+
+Therefor I suggest to use project tags. How you tag them is totally up to you but here I'll use `type:package` and `type:app`.
+
+Another thing we need to do is seperate the `publish` phase from the `version` and `changelog` phase.
+
+For versioning and changelog generation, both packages and apps will be treated the same.
+For publishing, obviously we only do this for packages.
+
+Note, it's always a good idea to add `"private": true` to your `package.json` files of your applications to prevent any tool from publishing applications to a possibly public registry.
+
+So eventually, our script will something like this:
+
+```
+# Bump versions and generate changelogs
+npx nx release --skip-publish
+# Publish packages
+npx nx release publish --projects tag:type:package
+```
