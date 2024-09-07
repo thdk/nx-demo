@@ -1,6 +1,6 @@
 {
   "name": "@nx-demo/books-api-contracts",
-  "version": "0.3.0",
+  "version": "0.0.1",
   "dependencies": {
     "zod": "^3.23.8"
   },
@@ -20,7 +20,5 @@
   },
   "main": "./index.cjs",
   "module": "./index.js",
-  "typings": "./index.d.ts",
-  "private": true,
-  "type": "module"
+  "typings": "./index.d.ts"
 }

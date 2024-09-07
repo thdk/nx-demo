@@ -79,7 +79,12 @@
     }
   },
   "release": {
-    "projects": ["tag:type:app", "tag:type:package"],
+    "projects": [
+      "tag:type:app",
+      "tag:type:package",
+      "books-api-contracts",
+      "books-api-client"
+    ],
     "releaseTagPattern": "{projectName}@{version}",
     "projectsRelationship": "independent",
     "conventionalCommits": {
@@ -119,6 +124,7 @@
       }
     },
     "version": {
+      "preVersionCommand": "npx nx run-many -t build",
       "conventionalCommits": true,
       "generatorOptions": {
         "updateDependents": "auto",
@@ -129,11 +135,9 @@
       "automaticFromRef": true,
       "projectChangelogs": {
         "renderOptions": {
-          "//": "Whether or not the commit authors should be added to the bottom of the changelog in a 'Thank You' section.",
-          "authors": true,
-          "//": "Whether or not the commit references (such as commit and/or PR links) should be included in the changelog.",
-          "commitReferences": true,
           "//": "Whether or not to include the date in the version title. It can be set to false to disable it, or true to enable with the default of (YYYY-MM-DD).",
+          "authors": true,
+          "commitReferences": true,
           "versionTitleDate": true
         }
       }

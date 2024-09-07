@@ -3,7 +3,15 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/books-api-client/src",
   "projectType": "library",
-  "tags": ["type:package"],
+  "release": {
+    "version": {
+      "generatorOptions": {
+        "packageRoot": "dist/{projectRoot}",
+        "currentVersionResolver": "git-tag"
+      }
+    }
+  },
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@nx/vite:build",
@@ -15,39 +23,10 @@
         "assets": ["libs/books-api-client/*.md"]
       }
     },
-    "test": {
+    "nx-release-publish": {
       "options": {
-        "cwd": "libs/books-api-client",
-        "command": "vitest --passWithNoTests"
-      },
-      "cache": true,
-      "inputs": [
-        "default",
-        "^production",
-        {
-          "externalDependencies": ["vitest"]
-        },
-        {
-          "env": "CI"
-        }
-      ],
-      "outputs": ["{workspaceRoot}/coverage/api-client"],
-      "metadata": {
-        "technologies": ["vite"],
-        "description": "Run Vite tests",
-        "help": {
-          "command": "npx vitest --help",
-          "example": {
-            "options": {
-              "bail": 1,
-              "coverage": true
-            }
-          }
-        }
-      },
-      "executor": "nx:run-commands",
-      "configurations": {},
-      "parallelism": true
+        "packageRoot": "dist/{projectRoot}"
+      }
     }
   }
 }

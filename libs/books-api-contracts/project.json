@@ -3,7 +3,15 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/books-api-contracts/src",
   "projectType": "library",
-  "tags": ["type:package"],
+  "release": {
+    "version": {
+      "generatorOptions": {
+        "packageRoot": "dist/{projectRoot}",
+        "currentVersionResolver": "git-tag"
+      }
+    }
+  },
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@nx/vite:build",
@@ -13,6 +21,11 @@
         "main": "libs/books-api-contracts/src/index.ts",
         "tsConfig": "libs/books-api-contracts/tsconfig.lib.json",
         "assets": ["libs/books-api-contracts/*.md"]
+      }
+    },
+    "nx-release-publish": {
+      "options": {
+        "packageRoot": "dist/{projectRoot}"
       }
     }
   }
