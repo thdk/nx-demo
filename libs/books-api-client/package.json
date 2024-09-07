@@ -1,8 +1,13 @@
 {
-  "name": "@nx-demo/books-api-client",
+  "name": "@thdk/books-api-client",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thdk/nx-demo.git",
+    "directory": "libs/books-api-client"
+  },
   "version": "0.0.1",
   "dependencies": {
-    "@nx-demo/books-api-contracts": "0.0.1",
+    "@thdk/books-api-contracts": "0.0.1",
     "got": "^14.4.2"
   },
   "main": "./index.js",

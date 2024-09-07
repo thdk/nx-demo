@@ -1,4 +1,4 @@
-import { findBooks } from '@nx-demo/books-api-client';
+import { findBooks } from '@thdk/books-api-client';
 import { useLoaderData } from '@remix-run/react';
 
 export async function loader() {

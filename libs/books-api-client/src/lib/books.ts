@@ -1,4 +1,4 @@
-import { GetBooksDto } from '@nx-demo/books-api-contracts/types';
+import { GetBooksDto } from '@thdk/books-api-contracts/types';
 import { got } from 'got';
 
 export type Book = {

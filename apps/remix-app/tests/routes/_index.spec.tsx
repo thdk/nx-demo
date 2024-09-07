@@ -12,6 +12,6 @@ test('renders loader data', async () => {
 
   render(<RemixStub />);
 
-  // TODO: mock @nx-demo/books-api-client findBooks function
+  // TODO: mock @thdk/books-api-client findBooks function
   // await waitFor(() => screen.findByText('The Great Gatsby'));
 });

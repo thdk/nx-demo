@@ -15,11 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-demo/books-api-client": ["libs/books-api-client/src/index.ts"],
-      "@nx-demo/books-api-contracts/schemas": [
+      "@thdk/books-api-client": ["libs/books-api-client/src/index.ts"],
+      "@thdk/books-api-contracts/schemas": [
         "libs/books-api-contracts/src/schemas.ts"
       ],
-      "@nx-demo/books-api-contracts/types": [
+      "@thdk/books-api-contracts/types": [
         "libs/books-api-contracts/src/types.ts"
       ]
     }

@@ -1,5 +1,10 @@
 {
-  "name": "@nx-demo/books-api-contracts",
+  "name": "@thdk/books-api-contracts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thdk/nx-demo.git",
+    "directory": "libs/books-api-contracts"
+  },
   "version": "0.0.1",
   "dependencies": {
     "zod": "^3.23.8"
