@@ -233,7 +233,7 @@ So eventually, our script will something like this:
 
 ```
 # Bump versions and generate changelogs
-npx nx release --skip-publish
+npx nx release --skip-publish [--first-release]
 # Publish packages
 npx nx release publish --projects tag:type:package
 ```
