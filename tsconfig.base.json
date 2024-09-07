@@ -16,7 +16,6 @@
     "baseUrl": ".",
     "paths": {
       "@nx-demo/books-api-client": ["libs/books-api-client/src/index.ts"],
-
       "@nx-demo/books-api-contracts/schemas": [
         "libs/books-api-contracts/src/schemas.ts"
       ],
