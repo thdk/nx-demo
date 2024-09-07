@@ -1,6 +1,6 @@
 {
   "name": "@nx-demo/books-api-contracts",
-  "version": "0.0.1",
+  "version": "0.3.0",
   "dependencies": {
     "zod": "^3.23.8"
   },

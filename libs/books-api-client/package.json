@@ -1,9 +1,9 @@
 {
   "name": "@nx-demo/books-api-client",
-  "version": "0.0.1",
+  "version": "0.4.0",
   "type": "module",
   "dependencies": {
-    "@nx-demo/books-api-contracts": "0.0.1",
+    "@nx-demo/books-api-contracts": "0.3.0",
     "got": "^14.4.2"
   },
   "main": "./index.js",
