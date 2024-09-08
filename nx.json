@@ -59,7 +59,7 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["apps/nest-api-e2e/**/*"]
+      "exclude": ["apps/books-api-e2e/**/*"]
     }
   ],
   "targetDefaults": {

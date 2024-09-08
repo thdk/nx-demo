@@ -15,5 +15,5 @@ export default {
     ],
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../coverage/nest-api-e2e',
+  coverageDirectory: '../../coverage/books-api-e2e',
 };

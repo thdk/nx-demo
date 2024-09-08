@@ -11,7 +11,7 @@
         "jestConfig": "apps/books-api-e2e/jest.config.ts",
         "passWithNoTests": true
       },
-      "dependsOn": ["nest-api:build"]
+      "dependsOn": ["books-api:build"]
     }
   }
 }
