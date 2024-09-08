@@ -2,6 +2,33 @@
 
 An introduction to Nx.
 
+## What we are building
+
+A books library app.
+
+### Technologies
+
+- [Nx](https://nx.dev/getting-started/intro#try-nx-yourself)!
+
+And...
+
+- backend: [nestjs](https://docs.nestjs.com/)
+- frontend: [remix](https://remix.run/docs/en/main)
+- request / response validation: [zod](https://zod.dev/)
+- end-to-end tests: [playwright](https://playwright.dev/docs/intro)
+- tests: [vitest](https://vitest.dev/guide/)
+- bundler: [vite](https://vitejs.dev/guide/)
+- orm: [mikro orm](https://mikro-orm.io/docs/guide)
+- database: [postgres](https://www.postgresql.org/)
+
+But note that we are never restricted to any of these choices. We can start any new project
+in this repo with any of [the supported tooling / frameworks](https://nx.dev/nx-api#official-packages-reference).
+
+The above tools are listed so that we can make consistent choices. Whenever there is a reason for it, please pick another
+that fits the job better.
+
+![project-graph](./docs/workspace-project-graph.png)
+
 ## Create nx workspace
 
 ```sh
