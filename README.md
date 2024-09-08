@@ -345,3 +345,19 @@ npx nx generate @nx/workspace:move --project remix-app-e2e --destination apps/bo
 # Rename nest-api-e2e to books-api-e2e
 npx nx generate @nx/workspace:move --project nest-api-e2e --destination apps/books-api-e2e --projectNameAndRootFormat as-provided --newProjectName books-api-e2e
 ```
+
+## Deploy
+
+### Setup docker generator
+
+Nx can generate a docker file a `build-docker` target for any node project.
+
+```sh
+npx nx g @nx/node:setup-docker \
+  --project books-api \
+  --outputPath dist/apps/books-api
+```
+
+```sh
+docker run -it --rm --init -p 3000:3000 books-api
+```
