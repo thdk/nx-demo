@@ -4,7 +4,7 @@
   "projectType": "application",
   "sourceRoot": "apps/remix-app-e2e/src",
   "tags": [],
-  "implicitDependencies": ["remix-app"],
+  "implicitDependencies": ["books-app"],
   "// targets": "to see all targets run: nx show project remix-app-e2e --web",
   "targets": {}
 }
