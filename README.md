@@ -334,3 +334,8 @@ https://nx.dev/concepts/decisions/project-dependency-rules
 - util
 
 Dependency rules can be enforced based on Nx project tags using `@nx/enforce-module-boundaries` eslint rule.
+
+```
+# Rename remix-app to books-app
+npx nx generate @nx/workspace:move --project remix-app --destination apps/books-app --projectNameAndRootFormat as-provided --newProjectName books-app
+```
