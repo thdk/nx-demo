@@ -341,4 +341,7 @@ npx nx generate @nx/workspace:move --project remix-app --destination apps/books-
 
 # Rename remix-app-e2e to books-app-e2e
 npx nx generate @nx/workspace:move --project remix-app-e2e --destination apps/books-app-e2e --projectNameAndRootFormat as-provided --newProjectName books-app-e2e
+
+# Rename nest-api-e2e to books-api-e2e
+npx nx generate @nx/workspace:move --project nest-api-e2e --destination apps/books-api-e2e --projectNameAndRootFormat as-provided --newProjectName books-api-e2e
 ```
