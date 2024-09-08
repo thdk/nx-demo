@@ -17,6 +17,12 @@ jobs:
       packages: write
       contents: write
     steps:
+      - name: Extract branch name
+        shell: bash
+        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+        id: extract_branch
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -38,7 +44,7 @@ jobs:
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
       # - run: npx nx-cloud record -- echo Hello World
       # Nx Affected runs only tasks affected by the changes in this PR/commit. Learn more: https://nx.dev/ci/features/affected
-      - run: npx nx affected -t lint test build
+      - run: npx nx affected -t lint test build docker-build
 
       - name: Set git config
         run: |
@@ -46,7 +52,9 @@ jobs:
           git config --global user.email 'github-action@users.noreply.github.com'
 
       # Version, generate changelogs and publish packages
-      - run: |
+      - name: publish new versions
+
+        run: |
           npx nx release --yes --verbose
         env:
           THDK_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
