@@ -5,7 +5,7 @@ import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 
 export default defineConfig({
   root: __dirname,
-  cacheDir: '../../node_modules/.vite/apps/remix-app',
+  cacheDir: '../../node_modules/.vite/apps/books-app',
 
   plugins: [react(), nxViteTsPaths()],
 
@@ -23,7 +23,7 @@ export default defineConfig({
 
     reporters: ['default'],
     coverage: {
-      reportsDirectory: '../../coverage/apps/remix-app',
+      reportsDirectory: '../../coverage/apps/books-app',
       provider: 'v8',
     },
   },

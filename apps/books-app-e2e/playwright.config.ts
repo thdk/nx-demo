@@ -27,7 +27,7 @@ export default defineConfig({
   },
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'npx nx run remix-app:serve-static',
+    command: 'npx nx run-many books-app:serve-static',
     url: 'http://localhost:3002',
     reuseExistingServer: !process.env.CI,
     cwd: workspaceRoot,
