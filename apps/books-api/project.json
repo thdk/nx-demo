@@ -21,6 +21,10 @@
           "buildTarget": "books-api:build:production"
         }
       }
+    },
+    "docker-build": {
+      "dependsOn": ["build"],
+      "command": "docker build -f apps/books-api/Dockerfile . -t books-api"
     }
   }
 }
