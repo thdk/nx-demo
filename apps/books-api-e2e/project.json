@@ -2,7 +2,7 @@
   "name": "books-api-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "implicitDependencies": ["nest-api"],
+  "implicitDependencies": ["books-api"],
   "targets": {
     "e2e": {
       "executor": "@nx/jest:jest",
