@@ -1,3 +1,7 @@
+## Nx demo
+
+An introduction to Nx.
+
 ## Create nx workspace
 
 ```sh
@@ -51,6 +55,10 @@ https://nx.dev/getting-started/tutorials/npm-workspaces-tutorial
 cd nx-demo
 ```
 
+### Integrated vs package based vs standalone
+
+### Nx cloud
+
 ## Install plugins
 
 See a [list of official packages](https://nx.dev/nx-api#official-packages-reference)
@@ -64,7 +72,12 @@ npx nx add @nx/nest
 ## Generate applications
 
 ```sh
-npx nx g @nx/remix:application --directory apps/remix-app --name remix-app --projectNameAndRootFormat as-provided --unitTestRunner vitest --e2eTestRunner playwright
+npx nx g @nx/remix:application \
+  --directory apps/remix-app \
+  --name remix-app \
+  --projectNameAndRootFormat as-provided \
+  --unitTestRunner vitest \
+  --e2eTestRunner playwright
 ```
 
 ## Navigate the nx workspace
@@ -81,6 +94,36 @@ npx nx run remix-app:dev
 
 ## Generate libraries
 
+### Publishable
+
+If you are planning to publish your package to a registry, you should use both `--publishable` and `--importPath` when generating the library. See also Nx docs for [publishable libraries](https://nx.dev/concepts/buildable-and-publishable-libraries#publishable-libraries).
+
+```sh
+# Example publishable library
+npx nx g lib books-api-client \
+  --publishable \
+  --importPath @nx-demo/books-api-client \
+  --directory libs/books-api-client \
+  --projectNameAndRootFormat as-provided \
+  --unitTestRunner vitest \
+  --bundler vite
+```
+
+```sh
+# Example non publishable library
+npx nx g lib books-api-client \
+  --directory libs/books-api-client \
+  --projectNameAndRootFormat as-provided \
+  --unitTestRunner vitest \
+  --bundler vite
+```
+
+### Buildable
+
+You can choose for either [buildable or non buildable libraries](https://nx.dev/concepts/buildable-and-publishable-libraries#buildable-libraries).
+
+I almost always go for buildable, since it doesn't bring any overhead for generating the required tooling, and nx will keep it up to date whenever a migration is required. It might be overkill for smaller projects, but it will allow your repo to scale without ever have to worry about it.
+
 ```sh
 # use vite / vitest when prompted
 npx nx g @nx/js:lib api-client
@@ -88,12 +131,20 @@ npx nx g @nx/js:lib api-client
 
 ## Workspace tools
 
+Everyone is free how to organise their monorepo.
+
 ### Move a project
 
 Move api-client from root folder to subfolder in `libs` folder.
 
 ```sh
-npx nx generate @nx/workspace:move --project api-client --destination libs/books-api-client --newProjectName books-api-client --projectNameAndRootFormat as-provided
+# We created the api-client project in the root of our repo
+# instead of in the `libs` folder. Let's move it.
+npx nx generate @nx/workspace:move \
+  --project api-client \
+  --destination libs/books-api-client \
+  --newProjectName books-api-client \
+  --projectNameAndRootFormat as-provided
 ```
 
 ## Override inferred targets
@@ -237,3 +288,22 @@ npx nx release --skip-publish [--first-release]
 # Publish packages
 npx nx release publish --projects tag:type:package
 ```
+
+## Dependency management
+
+Single version (Nx) vs Independently Maintained Dependencies (Any other monorepo)
+
+https://nx.dev/concepts/decisions/dependency-management
+
+## Project organisation and best practices
+
+### Project types
+
+https://nx.dev/concepts/decisions/project-dependency-rules
+
+- ui
+- data-access
+- feature
+- util
+
+Dependency rules can be enforced based on Nx project tags using `@nx/enforce-module-boundaries` eslint rule.
