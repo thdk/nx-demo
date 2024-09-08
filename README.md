@@ -338,4 +338,7 @@ Dependency rules can be enforced based on Nx project tags using `@nx/enforce-mod
 ```
 # Rename remix-app to books-app
 npx nx generate @nx/workspace:move --project remix-app --destination apps/books-app --projectNameAndRootFormat as-provided --newProjectName books-app
+
+# Rename remix-app-e2e to books-app-e2e
+npx nx generate @nx/workspace:move --project remix-app-e2e --destination apps/books-app-e2e --projectNameAndRootFormat as-provided --newProjectName books-app-e2e
 ```
