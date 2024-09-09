@@ -13,6 +13,7 @@ export async function findBooks(): Promise<Book[]> {
 
   // Map getBooksDto[] to Books[]
   return booksResponse
+    .reverse()
     .map((book) => ({
       id: book.id.toString(),
       title: book.title,
