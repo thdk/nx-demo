@@ -316,6 +316,28 @@ npx nx release --skip-publish [--first-release]
 npx nx release publish --projects tag:type:package
 ```
 
+Update: nx will never publish private packages. So you adding `"private": true` to all your apps `package.json` files is enough so you can still use the main `release` command. `npx nx release [--first-release]`.
+
+### Version and release in CI
+
+```sh
+      name: build
+      - run: npx nx affected -t lint test build docker-build
+
+      # Version, generate changelogs and publish packages
+      # Commit any changes and push them to the remote
+      - name: versions
+        if: github.ref_name == 'main'
+        run: |
+          npx nx release --yes --verbose
+          git config --global user.name 'Github Action'
+          git config --global user.email 'github-action@users.noreply.github.com'
+          git push --follow-tags
+        # I'm using github packages as npm package registry, see the `.npmrc` file for configuration
+        env:
+          THDK_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
 ## Dependency management
 
 Single version (Nx) vs Independently Maintained Dependencies (Any other monorepo)
@@ -360,4 +382,11 @@ npx nx g @nx/node:setup-docker \
 
 ```sh
 docker run -it --rm --init -p 3000:3000 books-api
+```
+
+### Add target `docker-build` in ci
+
+```yaml
+- name:
+  run: npx nx affected -t lint test build docker-build
 ```
