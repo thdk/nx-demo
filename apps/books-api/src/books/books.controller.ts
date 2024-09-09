@@ -18,6 +18,7 @@ export class BooksController {
       { id: 8, title: 'Harry Potter' },
       { id: 9, title: 'The Hobbit' },
       { id: 10, title: 'The Chronicles of Narnia' },
+      { id: 11, title: 'The Hunger Games' },
     ];
   }
 }
