@@ -1,3 +1,15 @@
+## 0.3.1 (2024-09-09)
+
+
+### Bug Fixes
+
+- rename remix-app
+
+
+### ❤️  Thank You
+
+- Thomas Dekiere
+
 ## 0.3.0 (2024-09-07)
 
 ### New Features
