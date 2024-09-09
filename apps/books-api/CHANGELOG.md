@@ -1,3 +1,20 @@
+## 0.5.0 (2024-09-09)
+
+
+### New Features
+
+- **books-api:** setup-docker
+
+
+### Bug Fixes
+
+- rename nest-api
+
+
+### ❤️  Thank You
+
+- Thomas Dekiere
+
 ## 0.4.0 (2024-09-09)
 
 
