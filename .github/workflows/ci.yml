@@ -53,7 +53,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           THDK_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if [[ "${{ steps.git.outputs.branch_name }}" == "main" ]]; then
+          if [[ "${{ steps.git.outputs.branch-name }}" == "main" ]]; then
             npx nx release --skip-publish --verbose
           else
             npx nx release version --preid ${{ steps.git.outputs.commit-sha-short }} --no-git-commit --no-git-tag --verbose
