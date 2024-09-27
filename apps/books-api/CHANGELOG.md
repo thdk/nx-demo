@@ -1,3 +1,15 @@
+## 0.6.0 (2024-09-27)
+
+
+### New Features
+
+- **book:** add The Hunger Games to list of books
+
+
+### ❤️  Thank You
+
+- Thomas Dekiere
+
 ## 0.5.0 (2024-09-09)
 
 
