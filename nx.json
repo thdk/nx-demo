@@ -34,18 +34,8 @@
         "serveStaticTargetName": "serve-static"
       }
     },
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
-    },
-    {
-      "plugin": "@nx/playwright/plugin",
-      "options": {
-        "targetName": "e2e"
-      }
-    },
+    { "plugin": "@nx/eslint/plugin", "options": { "targetName": "lint" } },
+    { "plugin": "@nx/playwright/plugin", "options": { "targetName": "e2e" } },
     {
       "plugin": "@nx/webpack/plugin",
       "options": {
@@ -56,9 +46,7 @@
     },
     {
       "plugin": "@nx/jest/plugin",
-      "options": {
-        "targetName": "test"
-      },
+      "options": { "targetName": "test" },
       "exclude": ["apps/books-api-e2e/**/*"]
     }
   ],
@@ -68,9 +56,7 @@
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
     },
-    "e2e-ci--**/*": {
-      "dependsOn": ["^build"]
-    },
+    "e2e-ci--**/*": { "dependsOn": ["^build"] },
     "@nx/vite:build": {
       "cache": true,
       "dependsOn": ["^build"],
@@ -88,38 +74,21 @@
     "projectsRelationship": "independent",
     "conventionalCommits": {
       "types": {
-        "fix": {
-          "semverBump": "patch",
-          "changelog": {
-            "title": "Bug Fixes"
-          }
-        },
+        "fix": { "semverBump": "patch", "changelog": { "title": "Bug Fixes" } },
         "feat": {
           "semverBump": "minor",
-          "changelog": {
-            "title": "New Features"
-          }
+          "changelog": { "title": "New Features" }
         },
         "docs": {
           "semverBump": "patch",
-          "changelog": {
-            "title": "Documentation Updates"
-          }
+          "changelog": { "title": "Documentation Updates" }
         },
         "build": {
           "semverBump": "minor",
-          "changelog": {
-            "title": "Other Updates"
-          }
+          "changelog": { "title": "Other Updates" }
         },
-        "chore": {
-          "semverBump": "none",
-          "changelog": false
-        },
-        "style": {
-          "semverBump": "patch",
-          "changelog": false
-        }
+        "chore": { "semverBump": "none", "changelog": false },
+        "style": { "semverBump": "patch", "changelog": false }
       }
     },
     "version": {
@@ -141,5 +110,6 @@
         }
       }
     }
-  }
+  },
+  "nxCloudAccessToken": "NzY1ODc3OWUtNzg4OS00NzNkLTliNmMtZTRhY2I3NjEzNjU0fHJlYWQtd3JpdGU="
 }
