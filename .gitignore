@@ -45,3 +45,6 @@ Thumbs.db
 # See https://nx.dev/recipes/tips-n-tricks/define-environment-variables#set-environment-variables
 .env.local
 nxcloud.env
+
+vite.config.*.timestamp*
+vitest.config.*.timestamp*
