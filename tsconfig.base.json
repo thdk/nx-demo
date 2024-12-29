@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nx-demo/nest-logger": ["libs/nest-logger/src/index.ts"],
       "@thdk/books-api-client": ["libs/books-api-client/src/index.ts"],
       "@thdk/books-api-contracts/schemas": [
         "libs/books-api-contracts/src/schemas.ts"
