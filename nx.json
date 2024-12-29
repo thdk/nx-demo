@@ -59,7 +59,10 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["apps/books-api-e2e/**/*"]
+      "exclude": [
+        "apps/books-api-e2e/**/*",
+        "apps/books-api-serverless-e2e/**/*"
+      ]
     }
   ],
   "targetDefaults": {
