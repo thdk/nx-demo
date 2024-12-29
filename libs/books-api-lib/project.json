@@ -1,0 +1,9 @@
+{
+  "name": "books-api-lib",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/books-api-lib/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project books-api-lib --web",
+  "targets": {}
+}
