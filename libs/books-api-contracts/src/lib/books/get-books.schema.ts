@@ -4,5 +4,6 @@ export const getBooksSchema = z.array(
   z.object({
     title: z.string(),
     id: z.number(),
+    summary: z.string(),
   })
 );
