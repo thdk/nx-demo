@@ -7,6 +7,7 @@ describe('getBooksSchema', () => {
       {
         id: 1,
         title: 'The Great Gatsby',
+        summary: 'A book by F. Scott Fitzgerald',
       },
     ];
 

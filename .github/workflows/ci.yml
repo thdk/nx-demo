@@ -54,18 +54,16 @@ jobs:
           THDK_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [[ "${{ steps.git.outputs.branch-name }}" == "main" ]]; then
-            npx nx release --skip-publish --verbose
+            npx nx release \ 
+              --skip-publish \
+              --verbose
           else
-            npx nx release version --preid ${{ steps.git.outputs.commit-sha-short }} --no-git-commit --no-git-tag --verbose
+            npx nx release version \
+              --preid ${{ steps.git.outputs.commit-sha-short }} \
+              --no-git-commit \
+              --no-git-tag \
+              --verbose
           fi
-
-      - name: Push version bumps, tags and changelogs
-        if: ${{ steps.git.outputs.branch-name == 'main' }}
-        run: |
-          git push
-          git push --tags
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish
         run: |
