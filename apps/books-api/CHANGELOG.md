@@ -1,3 +1,16 @@
+## 0.7.0 (2024-12-30)
+
+### New Features
+
+- add hello api app ([adb810b](https://github.com/thdk/nx-demo/commit/adb810b))
+- add hello api app ([3b7dcfd](https://github.com/thdk/nx-demo/commit/3b7dcfd))
+- add custom nest logger service using pino ([e06673d](https://github.com/thdk/nx-demo/commit/e06673d))
+- add custom nest logger service using pino ([bf7cca7](https://github.com/thdk/nx-demo/commit/bf7cca7))
+
+### ❤️ Thank You
+
+- Thomas Dekiere
+
 ## 0.6.0 (2024-09-27)
 
 

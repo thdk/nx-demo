@@ -1,3 +1,9 @@
+## 0.4.3 (2024-12-30)
+
+### 🧱 Updated Dependencies
+
+- Updated books-api-contracts to 0.4.0
+
 ## 0.4.2 (2024-09-27)
 
 
