@@ -61,7 +61,8 @@
       },
       "exclude": [
         "apps/books-api-e2e/**/*",
-        "apps/books-api-serverless-e2e/**/*"
+        "apps/books-api-serverless-e2e/**/*",
+        "apps/hello-api-e2e/**/*"
       ]
     }
   ],
