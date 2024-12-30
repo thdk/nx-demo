@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@nx-demo/books-api-lib": ["libs/books-api-lib/src/index.ts"],
+      "@nx-demo/hello-api-lib": ["libs/hello-api-lib/src/index.ts"],
       "@nx-demo/lorem-book-summarizer": [
         "libs/lorem-book-summarizer/src/index.ts"
       ],
