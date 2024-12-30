@@ -15,9 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nx-demo/books-api-lib": ["libs/books-api-lib/src/index.ts"],
       "@nx-demo/lorem-book-summarizer": [
         "libs/lorem-book-summarizer/src/index.ts"
       ],
+      "@nx-demo/nest-bootstrap": ["libs/nest-bootstrap/src/index.ts"],
       "@nx-demo/nest-logger": ["libs/nest-logger/src/index.ts"],
       "@thdk/books-api-client": ["libs/books-api-client/src/index.ts"],
       "@thdk/books-api-contracts/schemas": [
