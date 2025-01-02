@@ -87,14 +87,17 @@
     }
   },
   "release": {
-    "projects": [
-      "tag:type:app",
-      "tag:type:package",
-      "books-api-contracts",
-      "books-api-client"
-    ],
-    "releaseTagPattern": "{projectName}@{version}",
-    "projectsRelationship": "independent",
+    "groups": {
+      "packages": {
+        "projects": ["tag:publishable"],
+        "releaseTagPattern": "packages@{version}"
+      },
+      "applications": {
+        "projects": ["tag:deployable"],
+        "projectsRelationship": "independent",
+        "releaseTagPattern": "{projectName}@{version}"
+      }
+    },
     "conventionalCommits": {
       "types": {
         "fix": {
@@ -136,7 +139,8 @@
       "conventionalCommits": true,
       "generatorOptions": {
         "updateDependents": "auto",
-        "fallbackCurrentVersionResolver": "disk"
+        "fallbackCurrentVersionResolver": "disk",
+        "packageRoot": "dist/{projectRoot}"
       }
     },
     "changelog": {

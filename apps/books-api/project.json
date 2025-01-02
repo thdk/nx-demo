@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/books-api/src",
   "projectType": "application",
-  "tags": ["books", "type:app"],
+  "tags": ["books", "type:app", "deployable"],
   "targets": {
     "serve": {
       "executor": "@nx/js:node",
