@@ -72,6 +72,6 @@ jobs:
 
       - name: Publish
         run: |
-          npx nx release publish --yes --verbose
+          npx nx release publish --projects tag:publishable --yes --verbose
         env:
           THDK_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
