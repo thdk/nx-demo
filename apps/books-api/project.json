@@ -5,6 +5,13 @@
   "projectType": "application",
   "tags": ["books", "type:app", "deployable"],
   "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "options": {
+        "webpackConfig": "apps/books-api/webpack.config.js",
+        "outputPath": "dist/apps/books-api"
+      }
+    },
     "serve": {
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
