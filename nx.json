@@ -84,6 +84,25 @@
       "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
+    },
+    "docker-build": {
+      "dependsOn": ["build"],
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "docker build -f {projectRoot}/Dockerfile . -t {projectName}"
+      }
+    },
+    "docker-run": {
+      "dependsOn": ["docker-build"],
+      "executor": "nx:run-commands",
+      "options": {
+        "command": [
+          "docker run -it --rm --init",
+          "-p $PORT:$PORT",
+          "--env PORT",
+          "{projectName}"
+        ]
+      }
     }
   },
   "release": {

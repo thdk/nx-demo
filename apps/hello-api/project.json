@@ -33,6 +33,8 @@
       "options": {
         "passWithNoTests": true
       }
-    }
+    },
+    "docker-build": {},
+    "docker-run": {}
   }
 }
