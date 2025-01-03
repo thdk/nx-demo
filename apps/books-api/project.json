@@ -29,9 +29,7 @@
         }
       }
     },
-    "docker-build": {
-      "dependsOn": ["build"],
-      "command": "docker build -f apps/books-api/Dockerfile . -t books-api"
-    }
+    "docker-build": {},
+    "docker-run": {}
   }
 }

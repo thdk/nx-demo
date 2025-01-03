@@ -12,7 +12,7 @@ export default defineConfig({
   root: __dirname,
   cacheDir: '../../node_modules/.vite/apps/books-app',
   server: {
-    port: 4200,
+    port: process.env.PORT ? Number(process.env.PORT) : 4200,
     host: 'localhost',
   },
   preview: {
