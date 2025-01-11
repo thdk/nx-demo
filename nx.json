@@ -106,17 +106,8 @@
     }
   },
   "release": {
-    "groups": {
-      "packages": {
-        "projects": ["tag:publishable"],
-        "releaseTagPattern": "packages@{version}"
-      },
-      "applications": {
-        "projects": ["tag:deployable"],
-        "projectsRelationship": "independent",
-        "releaseTagPattern": "{projectName}@{version}"
-      }
-    },
+    "projects": ["tag:publishable"],
+    "releaseTagPattern": "packages@{version}",
     "conventionalCommits": {
       "types": {
         "fix": {
