@@ -106,56 +106,12 @@
     }
   },
   "release": {
-    "groups": {
-      "packages": {
-        "projects": ["tag:publishable"],
-        "releaseTagPattern": "packages@{version}"
-      },
-      "applications": {
-        "projects": ["tag:deployable"],
-        "projectsRelationship": "independent",
-        "releaseTagPattern": "{projectName}@{version}"
-      }
-    },
-    "conventionalCommits": {
-      "types": {
-        "fix": {
-          "semverBump": "patch",
-          "changelog": {
-            "title": "Bug Fixes"
-          }
-        },
-        "feat": {
-          "semverBump": "minor",
-          "changelog": {
-            "title": "New Features"
-          }
-        },
-        "docs": {
-          "semverBump": "patch",
-          "changelog": {
-            "title": "Documentation Updates"
-          }
-        },
-        "build": {
-          "semverBump": "minor",
-          "changelog": {
-            "title": "Other Updates"
-          }
-        },
-        "chore": {
-          "semverBump": "none",
-          "changelog": false
-        },
-        "style": {
-          "semverBump": "patch",
-          "changelog": false
-        }
-      }
-    },
+    "projects": ["tag:publishable"],
+    "releaseTagPattern": "{projectName}@{version}",
+    "projectsRelationship": "independent",
+
     "version": {
       "preVersionCommand": "npx nx run-many -t build --projects tag:publishable tag:deployable",
-      "conventionalCommits": true,
       "generatorOptions": {
         "updateDependents": "auto",
         "fallbackCurrentVersionResolver": "disk",
